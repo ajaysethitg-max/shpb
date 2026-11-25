@@ -1,0 +1,71 @@
+name: Build and deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Rebuild every night so Google and WhatsApp previews pick up your latest sheet changes.
+  schedule:
+    - cron: "30 20 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - run: npm ci
+
+      # 1) Copy for cPanel hosting (site at the top of your own domain, no folder prefix).
+      - name: Build for cPanel
+        run: npm run build && mv out out-cpanel
+        env:
+          GOOGLE_SHEET_ID: ${{ vars.GOOGLE_SHEET_ID }}
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+
+      # 2) Copy for GitHub Pages (adds the /repository-name folder when there is no custom domain).
+      - name: Build for GitHub Pages
+        run: npm run build
+        env:
+          GOOGLE_SHEET_ID: ${{ vars.GOOGLE_SHEET_ID }}
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.base_url }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      # Download this from the Actions run page and upload its contents to cPanel (public_html).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: website-for-cpanel
+          path: out-cpanel
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
