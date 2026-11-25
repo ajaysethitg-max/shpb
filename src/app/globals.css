@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso-950: #14100c;
+  --color-espresso-900: #1a1410;
+  --color-espresso-800: #221a14;
+  --color-espresso-700: #2e241c;
+  --color-espresso-600: #3f3227;
+  --color-espresso-500: #544539;
+
+  --color-gold-100: #f7ecd0;
+  --color-gold-200: #eedcad;
+  --color-gold-300: #e3c87f;
+  --color-gold-400: #d9b45c;
+  --color-gold-500: #caa44f;
+  --color-gold-600: #a8813c;
+  --color-gold-700: #7d5f27;
+  --color-gold-800: #54401d;
+
+  --color-cream-50: #faf4e8;
+  --color-cream-100: #f4ead9;
+  --color-cream-200: #e9dcc3;
+  --color-cream-300: #d9c6a3;
+
+  --color-sindoor-500: #a8452c;
+  --color-peacock-700: #14532d;
+
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+  --font-hindi: var(--font-tiro), var(--font-playfair), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #caa44f;
+  color: #241a10;
+}
+
+/* ── Gold gradient headline text ─────────────────────────────── */
+.gold-text {
+  background-image: linear-gradient(
+    155deg,
+    #f6e27a 0%,
+    #dfc06a 22%,
+    #a8813c 45%,
+    #f1d98b 68%,
+    #caa44f 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-pan 7s ease-in-out infinite;
+}
+@keyframes gold-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ── Premium card ────────────────────────────────────────────── */
+.card {
+  background: #fffdf7;
+  border: 1px solid rgba(84, 64, 29, 0.16);
+  box-shadow:
+    0 1px 2px rgba(20, 16, 12, 0.06),
+    0 14px 34px -14px rgba(20, 16, 12, 0.28);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 2px 4px rgba(20, 16, 12, 0.08),
+    0 28px 56px -18px rgba(84, 64, 29, 0.4);
+}
+
+/* ── Gold button ─────────────────────────────────────────────── */
+.btn-gold {
+  background: linear-gradient(160deg, #eed98a 0%, #caa44f 52%, #a8813c 100%);
+  color: #241a10;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -2px 4px rgba(84, 64, 29, 0.35),
+    0 12px 26px -12px rgba(168, 129, 60, 0.75);
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.btn-gold:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+}
+.btn-gold:active {
+  transform: translateY(0.5px);
+}
+
+/* ── WhatsApp button ─────────────────────────────────────────── */
+.btn-wa {
+  background: linear-gradient(160deg, #3ddc84 0%, #25d366 45%, #128c4a 100%);
+  color: #063b1e;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 12px 26px -12px rgba(18, 140, 74, 0.8);
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+.btn-wa:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+.wa-pulse {
+  animation: wa-pulse 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes wa-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ── Form field ──────────────────────────────────────────────── */
+.field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #e2d3b5;
+  background: #fffdf7;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: #221a14;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.field::placeholder {
+  color: #9b8a6d;
+}
+.field:focus {
+  border-color: #caa44f;
+  box-shadow: 0 0 0 3px rgba(202, 164, 79, 0.28);
+}
+.field-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #54401d;
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+/* ── Chip / pill ─────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  border: 1px solid #e2d3b5;
+  background: #fffdf7;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #54401d;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chip:hover {
+  border-color: #caa44f;
+  color: #7d5f27;
+}
+.chip[data-active="true"] {
+  background: #221a14;
+  border-color: #221a14;
+  color: #eedcad;
+}
+
+/* ── Flourish divider ────────────────────────────────────────── */
+.flourish {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.flourish::before,
+.flourish::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #caa44f 45%, #caa44f 55%, transparent);
+}
+
+/* ── Marquee (announcement + reviews) ────────────────────────── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 42s linear infinite;
+}
+.marquee-paused:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ── Floaty / fade-up entrances ──────────────────────────────── */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-toast-in {
+  animation: toast-in 0.3s ease both;
+}
+@keyframes check-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-check-pop {
+  animation: check-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Scrollbar hiding for chip rails ─────────────────────────── */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Thin elegant scrollbar for drawers ──────────────────────── */
+.thin-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #caa44f66;
+  border-radius: 999px;
+}
+
+/* ── Details accordion ───────────────────────────────────────── */
+details.accordion > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.accordion > summary::-webkit-details-marker {
+  display: none;
+}
+details.accordion[open] .accordion-chevron {
+  transform: rotate(45deg);
+}
+.accordion-chevron {
+  transition: transform 0.25s ease;
+}

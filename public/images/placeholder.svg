@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Photo coming soon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e241c"/><stop offset="1" stop-color="#14100c"/>
+    </linearGradient>
+    <radialGradient id="r" cx="50%" cy="38%" r="55%">
+      <stop offset="0" stop-color="#caa44f" stop-opacity=".30"/><stop offset="1" stop-color="#caa44f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#g)"/>
+  <rect width="400" height="500" fill="url(#r)"/>
+  <g fill="none" stroke="#caa44f" stroke-width="2" opacity=".75" transform="translate(200 215)">
+    <path d="M0 -62 C14 -34 14 -12 0 6 C-14 -12 -14 -34 0 -62Z"/>
+    <path d="M0 6 C28 -6 52 -4 66 10 C46 24 20 22 0 6Z"/>
+    <path d="M0 6 C-28 -6 -52 -4 -66 10 C-46 24 -20 22 0 6Z"/>
+    <path d="M0 6 C22 12 40 30 44 48 C22 52 6 34 0 6Z"/>
+    <path d="M0 6 C-22 12 -40 30 -44 48 C-22 52 -6 34 0 6Z"/>
+  </g>
+  <text x="200" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#e3c87f" opacity=".85" letter-spacing="3">PHOTO COMING SOON</text>
+</svg>

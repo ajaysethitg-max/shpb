@@ -1,0 +1,85 @@
+key,value,what it does
+shop_name,Shri Haridas Poshak Bhandar,"Full shop name (browser title, WhatsApp messages, footer)"
+brand_line1,Shri Haridas,Big name in the header. The LAST word is shown in gold
+brand_line2,Poshak Bhandar,Small line under the name in the header
+tagline,Deity Idols · Poshak · Puja Items,Short tagline (page title and social sharing)
+tagline_hi,,Hindi tagline (optional)
+city,Vrindavan,City / town shown under the name. Blank = hidden
+est_year,,"Year the shop started, e.g. 1985. Blank = hidden"
+site_url,,"Your website address, e.g. https://shriharidasposhakbhandar.in (used in WhatsApp links and Google)"
+phone,+91 63974 65597,Phone number for the Call buttons
+whatsapp,916397465597,"WhatsApp number, DIGITS ONLY with country code. ALL orders are sent here"
+whatsapp_display,+91 63974 65597,WhatsApp number as shown to visitors
+email,,Email address. Blank = hidden
+address,,Full shop address. Blank = hidden
+address_short,,One-line address for the top menu. Blank = hidden
+hours,,"Opening hours, e.g. Mon-Sun 8 AM to 9 PM. Blank = hidden"
+instagram,https://www.instagram.com/reel/DfjfuRtRWGP/?cnvx=enNyZXNwZWt3OWN6,Instagram link (profile or reel). Blank = hidden
+instagram_handle,,Instagram handle like @shopname (optional)
+maps_embed,,Google Maps EMBED link (Share > Embed a map > copy the src). Blank = no map
+maps_link,,Normal Google Maps link for the Get Directions button. Blank = hidden
+wa_greeting,Hare Krishna!,First line of every WhatsApp message
+order_note,"Your order is sent to us on WhatsApp. We will confirm availability, price and delivery there.",Shown on the checkout page
+announcement,Customisation available for all deities • All sizes available • Order directly on WhatsApp,Top scrolling bar. Separate messages with the • symbol
+free_shipping_threshold,,Order value (number) above which shipping is free. Blank = no free-shipping bar
+shipping_text,,Shipping / delivery information (product page and FAQ). Blank = hidden
+returns_text,,Returns / exchange information. Blank = hidden
+payment_text,,Payment information. Blank = hidden
+default_sizes,3 inch|4 inch|5 inch|6 inch|8 inch|10 inch|12 inch|15 inch|18 inch|24 inch|36 inch,Sizes offered for idols and poshak when a product row has no sizes. Separate with |
+logo_image,,Logo (square). Blank = lotus placeholder
+hero_image,,Big home-page banner photo. Blank = plain dark banner
+og_image,,Photo shown when the website is shared on WhatsApp / Facebook
+cat_idols_image,,Home page tile photo for Idols
+cat_poshak_image,,Home page tile photo for Poshak
+cat_puja_image,,Home page tile photo for Puja & Accessories
+custom_image,,Photo beside the Customisation section
+about_image,,Photo on the About page
+hero_title_1,"Idols, Poshak","Big heading, first line"
+hero_title_2,& Puja Items,"Big heading, second line (shown in gold)"
+hero_text,"Deity idols in Peetal, Asthdhatu, Pathar and Dust Marble, poshak in Cotton, Silk, Woolen, Saneel, Velvet, Jari and Handmade, and all puja items. Customisation available.",Paragraph under the heading
+hero_badge_1,Customisation available,Small badge 1 under the buttons. Blank = hidden
+hero_badge_2,All sizes available,Small badge 2
+hero_badge_3,Order directly on WhatsApp,Small badge 3
+cat_idols_title,Idols,Tile title
+cat_idols_sub,,Tile subtitle. Blank = automatic from your products' materials
+cat_poshak_title,Poshak,Tile title
+cat_poshak_sub,,Tile subtitle. Blank = automatic from your products' fabrics
+cat_puja_title,Puja & Accessories,Tile title
+cat_puja_sub,,Tile subtitle. Blank = automatic from your products' categories
+custom_title_1,Your deity.,"Customisation banner, first line"
+custom_title_2,Your design.,"Customisation banner, second line (gold)"
+custom_points,"Poshak made to your deity's size|Choose your fabric, colour and design|Share a reference photo on WhatsApp|Confirm everything on WhatsApp before we start","Bullet points, separated by |"
+deities_title,Our Deities,Deities page heading
+deities_text,"Idols, poshak and accessories for every deity. Choose your deity to see everything available.",Deities page paragraph
+deities_note,Don't see your deity? Message us on WhatsApp with the name and a photo.,Note at the bottom of the Deities page. Blank = hidden
+idols_title,Idols,Idols page heading
+idols_text,"Deity idols in Peetal, Asthdhatu, Pathar and Dust Marble, available in all sizes.",Idols page paragraph
+idols_badges,All sizes available|Customisation available,"Small badges on Idols page, separated by |"
+poshak_title,Poshak,Poshak page heading
+poshak_text,"Poshak for every deity in all sizes, in Cotton, Silk, Woolen, Saneel, Velvet, Jari and Handmade fabrics. Customisation available.",Poshak page paragraph
+poshak_badges,All sizes available|Customisation available,"Small badges on Poshak page, separated by |"
+puja_title,Puja & Accessories,Puja page heading
+puja_text,"Attar, agarbatti, dhoopbatti, chandan, kanthi mala, tulsi mala, mukut, pagdi, jewellery and all accessories for your deity.",Puja page paragraph
+puja_note,,Optional notice bar on the Puja page. Blank = hidden
+catalog_text,"Everything available at the shop, in one place. Search or filter by deity, material or fabric.",Shop All paragraph
+custom_intro,"Tell us the deity, size, fabric and colour. We will confirm the design and price with you on WhatsApp.",Custom Order page paragraph
+custom_item_types,Poshak (deity dress)|Complete shringar set|Idol|Mukut & Pagdi|Jhula / Singhasan / Bed|Other (I will describe),"Custom Order: what can be made, separated by |"
+custom_fabrics,Cotton|Silk|Woolen|Saneel|Velvet|Jari|Handmade,"Custom Order: fabric choices, separated by |"
+custom_colours,Red|Maroon|Pink|Orange|Yellow|Green|Blue|Purple|White|Cream|Gold|Multicolour,"Custom Order: colour choices, separated by |"
+custom_steps,You send the details|We confirm design and price on WhatsApp|We make it|Delivery or pickup,"Custom Order: how it works, separated by |"
+custom_note,,"Optional note on the Custom Order page, e.g. time needed. Blank = hidden"
+about_title,About Us,About page heading
+about_story,"Shri Haridas Poshak Bhandar offers deity idols, poshak and puja items for every deity.||Everything is available in all sizes and customisation is available. Message us on WhatsApp for sizes, prices and availability.",Your story. Separate paragraphs with ||
+about_points,,"Highlights shown as small badges, separated by |. Blank = hidden"
+faq_1_q,What does Price on Request mean?,FAQ 1 question
+faq_1_a,"The price depends on the size, material or fabric you choose. Add the item to your order or message us on WhatsApp and we will confirm the price.",FAQ 1 answer
+faq_2_q,Can I get something customised?,FAQ 2 question
+faq_2_a,Yes. Customisation is available for poshak and other items. Use the Custom Order page or message us on WhatsApp.,FAQ 2 answer
+faq_3_q,How do I place an order?,FAQ 3 question
+faq_3_a,Add items to your order and press Send Order on WhatsApp. We will reply on WhatsApp to confirm everything.,FAQ 3 answer
+faq_4_q,,FAQ 4 question (blank = hidden)
+faq_4_a,,FAQ 4 answer
+faq_5_q,,FAQ 5 question (blank = hidden)
+faq_5_a,,FAQ 5 answer
+faq_6_q,,FAQ 6 question (blank = hidden)
+faq_6_a,,FAQ 6 answer
