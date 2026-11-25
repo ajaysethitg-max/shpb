@@ -8,6 +8,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const SheetContext = createContext<SheetData | null>(null);
 const SettledContext = createContext<boolean>(false);
+const UrlsContext = createContext<SheetUrls | null>(null);
 
 /**
  * Holds the shop data. It starts with the snapshot taken when the site was built, then reloads the
@@ -26,6 +27,7 @@ export function SheetProvider({
 }) {
   const [data, setData] = useState<SheetData>(initial);
   const [settled, setSettled] = useState(false);
+  const [activeUrls, setActiveUrls] = useState<SheetUrls | null>(urls);
   const latest = useRef<SheetData>(initial);
   const resolved = useRef<SheetUrls | null>(urls);
 
@@ -58,6 +60,7 @@ export function SheetProvider({
         setSettled(true);
         return;
       }
+      setActiveUrls(u);
       const { data: fresh } = await loadSheet(u, latest.current);
       if (dead) return;
       latest.current = fresh;
@@ -78,7 +81,9 @@ export function SheetProvider({
 
   return (
     <SheetContext.Provider value={data}>
-      <SettledContext.Provider value={settled}>{children}</SettledContext.Provider>
+      <SettledContext.Provider value={settled}>
+        <UrlsContext.Provider value={activeUrls}>{children}</UrlsContext.Provider>
+      </SettledContext.Provider>
     </SheetContext.Provider>
   );
 }
@@ -92,4 +97,9 @@ export function useSheet(): SheetData {
 /** True once the browser has tried to reload the sheet (whether or not it worked). */
 export function useSheetSettled(): boolean {
   return useContext(SettledContext);
+}
+
+/** The sheet addresses in use (null when no sheet is connected). */
+export function useSheetUrls(): SheetUrls | null {
+  return useContext(UrlsContext);
 }

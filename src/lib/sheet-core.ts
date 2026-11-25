@@ -31,10 +31,20 @@ export async function fetchRows(url: string | null): Promise<{ rows: string[][] 
 
 const norm = (h: string) => h.trim().toLowerCase().replace(/[\s-]+/g, "_");
 
-function toObjects(rows: string[][]): Row[] {
-  if (rows.length < 2) return [];
-  const header = rows[0].map(norm);
-  return rows.slice(1).map((r) => {
+/** Index of the header row. Google sometimes adds a blank row above it, so look in the first few rows. */
+export function findHeaderRow(rows: string[][]): number {
+  for (let i = 0; i < Math.min(rows.length, 6); i++) {
+    const cells = rows[i].map(norm);
+    if (cells.includes("name") || cells.includes("key")) return i;
+  }
+  return 0;
+}
+
+export function toObjects(rows: string[][]): Row[] {
+  const at = findHeaderRow(rows);
+  if (rows.length < at + 2) return [];
+  const header = rows[at].map(norm);
+  return rows.slice(at + 1).map((r) => {
     const o: Row = {};
     header.forEach((h, i) => {
       if (h) o[h] = String(r[i] ?? "").trim();
